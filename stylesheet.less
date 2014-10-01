@@ -58,6 +58,9 @@ ul, li {
         background: @color-swatch1;
         padding-top: 130px;
         padding-bottom: 3em;
+        @media only screen and (max-width: 960px) {
+            padding-top: 60px;
+        }
     }
 
     a {
@@ -422,6 +425,12 @@ body {
             }
         }
 
+    // Overlay on editor
+
+        .widget.extendednavigation .bk-overlay {
+            top: -30px !important;
+        }
+
 
 
 
@@ -642,8 +651,8 @@ textarea {
                     background-repeat: no-repeat;
                     background-position: 10px center;
                     @media @mobile {
-                        background-image: none;
-                        text-indent: 10px;
+                        background-image: none !important;
+                        text-indent: 5px;
                     }
                 }
                 .form-group button.btn {
@@ -663,8 +672,8 @@ textarea {
             text-indent: 40px;
             border: 1px solid lighten(@color-swatch3,60%);
             @media @mobile {
-                background-image: none;
-                text-indent: 10px;
+                background-image: none !important;
+                text-indent: 5px;
             }
         }
 
@@ -887,6 +896,10 @@ textarea {
             height: 280px;
         }
     }
+    .content-wrapper {
+        background: darken(@color-swatch5,20%);
+        display: table;
+    }
     .title {
         display: block;
         font-size: @font-swatch3-font-size;
@@ -894,10 +907,8 @@ textarea {
         line-height: @font-swatch3-line-height;
         font-weight: @font-swatch3-font-weight;
     }
-    .content-wrapper {
-        background: darken(@color-swatch5,20%);
-        display: table;
-        padding: 10px;
+    .widget.responsiveslideshow .title, .widget.responsiveslideshow .description {
+        padding: 5px 20px 5px 20px;
     }
     .slideshow-widget {
         /* Arrows */
@@ -1017,16 +1028,19 @@ hr {
             .bk-profile-socialicons {
                 margin: 0;
             }
+            span.bk-profile-phone {
+                letter-spacing: 1px;
+            }
             form {
                 fieldset input {
                     border: none;
                     background-color: @color-swatch1;
                 }
                 button.btn {
-                    background-color: @color-swatch2;
+                    background-color: darken(@color-swatch2,5%);
                     color: @color-swatch7;
                     &:hover {
-                        background-color: darken(@color-swatch2,5%);
+                        background-color: darken(@color-swatch2,10%);
                     }
                 }
             }
