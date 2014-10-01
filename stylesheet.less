@@ -145,7 +145,10 @@ body {
             .bk-profile-headline {
                 padding-top: 1.5em;
             }
-            span, .bk-profile-address p, .twitter .twitter-content p {
+            .bk-profile-strapline {
+                color: @font-swatch9-color;
+            }
+            span, .bk-profile-address p, .twitter .twitter-content p, ul.twitter p {
                 font-family: @font-swatch8-font-family;
                 color: @font-swatch8-color;
                 font-size: @font-swatch8-font-size;
@@ -172,6 +175,9 @@ body {
             form fieldset input {
                 border: none;
                 background-color: @color-swatch1;
+            }
+            span.bk-profile-phone {
+                letter-spacing: 1px;
             }
             @media @mobile {
                 span, .bk-profile-address p, .twitter .twitter-content p {
@@ -987,7 +993,7 @@ hr {
     .footer-left, .footer-right {
         width: 50%;
         .widget.profile {
-            span, .bk-profile-address p, .twitter .twitter-content p {
+            span, .bk-profile-address p, p, a, .twitter .twitter-content p {
                 font-family:@font-swatch8-font-family;
                 font-size: @font-swatch5-font-size;
                 font-weight: @font-swatch8-font-weight;
@@ -1032,7 +1038,7 @@ hr {
     .footer-right {
         float: right;
         .widget.profile {
-            span, .twitter .twitter-content p {
+            span, .bk-profile-address p, p, a, .twitter .twitter-content p, .bk-profile-socialicons {
                 text-align: right;
             }
         }
@@ -1049,7 +1055,7 @@ hr {
                     float: none;
                     .widget.profile {
                         padding-bottom: 20px;
-                        span, .bk-profile-address p, .twitter .twitter-content p {
+                        span, .bk-profile-address p, p, a, .twitter .twitter-content p {
                             text-align: center;
                         }
                     }
