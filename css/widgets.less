@@ -153,7 +153,7 @@ a.basket-summary-empty-cta.btn,
 // Forms
 // -----------------------------
 
-label {
+label, .contactform label, .signupform fieldset label {
     display: block;
     font-family: @font-swatch2-font-family;
     color: @font-swatch2-color;
@@ -167,7 +167,7 @@ input, input[type='text'], input[type=email] {
 }
 
 input, input[type='text'], input[type=email], textarea, select, .signupform fieldset input, .blogsearch form input, .signupform fieldset input[type=email], .blogsearch form input[type='text'], .widget.profile form fieldset input {
-    border: 1px solid fade(@color-swatch5,40%);
+    border: 1px solid darken(@color-swatch1,10%);
     background-color: transparent;
     height: 45px;
     -webkit-border-radius: 0;
@@ -211,7 +211,7 @@ textarea {
                 input {
                     text-indent: 40px;
                     margin-bottom: 10px;
-                    border: 1px solid lighten(@color-swatch3,60%);
+                    border: 1px solid darken(@color-swatch1,10%);
                     background-image: image('/images/envelope.png');
                     background-size: auto;
                     background-repeat: no-repeat;
@@ -236,7 +236,7 @@ textarea {
             background-repeat: no-repeat;
             background-position: 13px 5px;
             text-indent: 40px;
-            border: 1px solid lighten(@color-swatch3,60%);
+            border: 1px solid darken(@color-swatch1,10%);
             @media @mobile {
                 background-image: none !important;
                 text-indent: 5px;
@@ -417,7 +417,7 @@ textarea {
     .image-data {
         display: block;
         opacity: 0;
-        background-color: darken(@color-swatch5,20%);
+        background-color: darken(@color-swatch5,10%);
         -webkit-transition: all 0.4s ease-out;
         -moz-transition: all 0.4s ease-out;
         -o-transition: all 0.4s ease-out;
@@ -461,7 +461,7 @@ textarea {
         }
     }
     .content-wrapper {
-        background: darken(@color-swatch5,20%);
+        background: darken(@color-swatch5,10%);
         display: table;
     }
     .title {
@@ -470,9 +470,10 @@ textarea {
         font-family: @font-swatch3-font-family;
         line-height: @font-swatch3-line-height;
         font-weight: @font-swatch3-font-weight;
-    }
-    .title, .description {
         padding: 5px 20px 5px 20px;
+    }
+    .description {
+        padding: 0px 20px 5px 20px;
     }
     .slideshow-widget {
         /* Arrows */
