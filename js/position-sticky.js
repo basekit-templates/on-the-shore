@@ -200,7 +200,7 @@
     };
 
     StickyElement.prototype.showDummyElement = function() {
-      return this.dummyElement.style.height = this.height + "px";
+      // return this.dummyElement.style.height = this.height + "px";
     };
 
     StickyElement.prototype.stick = function() {
