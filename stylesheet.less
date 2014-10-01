@@ -137,7 +137,31 @@ body {
             font-weight: @font-swatch9-font-weight;
             line-height: @font-swatch9-line-height;
         }
-
+        span, .bk-profile-address p, .twitter .twitter-content p {
+            font-family:@font-swatch8-font-family;
+            font-size: @font-swatch5-font-size;
+            font-weight: @font-swatch8-font-weight;
+            line-height:@font-swatch5-line-height;
+            color: @font-swatch8-color;
+            letter-spacing: @font-swatch8-letter-spacing;
+        } 
+        a, .bk-profile-email a {
+            color: @color-swatch2;
+        }
+        .bk-profile-address p {
+            display: inline-block;
+            padding-bottom: 0;
+            &:after {
+                content: "\002C";
+            }
+            &:last-child:after {
+                content: '';
+            }
+        }
+        form fieldset input {
+            border: none;
+            background-color: @color-swatch1;
+        }
     }
 
     // Home page arrow down
@@ -914,9 +938,11 @@ textarea {
 // Footer
 // -----------------------------
 
-
 .footer {
     background: @color-swatch7;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 50px;
     .footer-left, footer-right {
         width: 50%;
         .widget.profile {
@@ -928,14 +954,30 @@ textarea {
                 color: @font-swatch8-color;
                 letter-spacing: @font-swatch8-letter-spacing;
             } 
-            a {
+            a, .bk-profile-email a {
                 color: @color-swatch2;
             }
-            form button.btn {
-                background-color: @color-swatch2;
-                color: @color-swatch7;
-                &:hover {
-                    background-color: darken(@color-swatch2,5%);
+            .bk-profile-address p {
+                display: inline-block;
+                padding-bottom: 0;
+                &:after {
+                    content: "\002C";
+                }
+                &:last-child:after {
+                    content: '';
+                }
+            }
+            form {
+                fieldset input {
+                    border: none;
+                    background-color: @color-swatch1;
+                }
+                button.btn {
+                    background-color: @color-swatch2;
+                    color: @color-swatch7;
+                    &:hover {
+                        background-color: darken(@color-swatch2,5%);
+                    }
                 }
             }
         }
@@ -944,14 +986,32 @@ textarea {
         float: left;
     }
     .footer-right {
-        display: inline-block;
-
+        float: right;
+        .widget.profile {
+            span, .bk-profile-address p, .twitter .twitter-content p {
+                text-align: right;
+            }
+        }
     }
 }
 
+    // Progile widgets on tablet
 
+        @media @tablet {
+            .footer {
+                padding: 2% 5%;
+                .footer-left, footer-right {
+                    width: 100%;
+                    float: none;
+                    .widget.profile {
+                        span, .bk-profile-address p, .twitter .twitter-content p {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
 
-	// Profile widget styles
 
 
 
