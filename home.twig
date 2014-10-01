@@ -1,0 +1,51 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<div class="bk-home">
+
+	<header class="cd-header">
+		<div class="intro">
+			<div class="intro-background">
+				<div class="brand">
+					{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+					{{widget('companyname', 'homepage-companyname', {"business": "profile"})|raw}}
+				</div>
+				<div class="profile-container">
+					{{widget('profile', 'headline', { 'profileType':'headline'})|raw}}
+					{{widget('profile', 'strapline', { 'profileType':'strapline'})|raw}}
+				</div>
+				<div class="header-arrow-down">
+					<a href="#zone-content"></a>
+				</div>
+			</div>
+		</div>
+	</header><!--end cd-header -->
+	<nav id="nav-bar">
+		<div class="nav-container">
+			<div class="identity">
+				{{widget('companyname', 'nav-bar-companyname', {"business": "profile"})|raw}}
+			</div>
+			<div class="navigation">
+				{{widget('extendednavigation', 'header-navigation', {"align":"right"})|raw}}
+			</div>
+		</div>
+	</nav>
+	<div class="canvas">
+			<div class="main wrapper">
+				<a name="zone-content"></a>
+				{{zone('main')|raw}}
+			</div><!--end main-->
+	</div><!--end canvas-->
+
+	<div class="footer">
+		<div class="footer-left">
+			{{widget('profile', 'copyright', { 'profileType':'copyright'})|raw}}
+		</div>
+		<div class="footer-right">
+			{{widget('profile', 'socialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
