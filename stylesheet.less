@@ -112,56 +112,65 @@ body {
     background-color: fade(#000000,20%);
     padding: 2.5em 3em 1.5em;
     margin: 3.5em 0 3em;
-}
-
-.brand {
-    margin-bottom: 3em;
+    @media only screen and (max-width: 960px) {
+        max-width: 90%;
+        margin: 5%;
+    }
+    @media @mobile {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
 }
 		
     // Profile widget styles
 
-    .profile-container .widget.profile {
-        .bk-profile-headline {
-            font-family: @font-swatch8-font-family;
-            color: @font-swatch8-color;
-            font-size: @font-swatch8-font-size;
-            font-weight: @font-swatch8-font-weight;
-            line-height: @font-swatch8-line-height;
-            border-top: 1px solid fade(@color-swatch1,30%);
-            padding-top: 1.5em;
-        }
-        .bk-profile-strapline {
-            font-family: @font-swatch9-font-family;
-            color: @font-swatch9-color;
-            font-size: @font-swatch9-font-size;
-            font-weight: @font-swatch9-font-weight;
-            line-height: @font-swatch9-line-height;
-        }
-        span, .bk-profile-address p, .twitter .twitter-content p {
-            font-family:@font-swatch8-font-family;
-            font-size: @font-swatch5-font-size;
-            font-weight: @font-swatch8-font-weight;
-            line-height:@font-swatch5-line-height;
-            color: @font-swatch8-color;
-            letter-spacing: @font-swatch8-letter-spacing;
-        } 
-        a, .bk-profile-email a {
-            color: @color-swatch2;
-        }
-        .bk-profile-address p {
-            display: inline-block;
-            padding-bottom: 0;
-            &:after {
-                content: "\002C";
-            }
-            &:last-child:after {
-                content: '';
+    .profile-container {
+        .widget.line {
+            hr.line {
+                background-color: fade(@color-swatch1,30%);
+                height: 1px;
+                width: 45%;
             }
         }
-        form fieldset input {
-            border: none;
-            background-color: @color-swatch1;
+        .widget.profile {
+            .bk-profile-headline {
+                padding-top: 1.5em;
+            }
+            span, .bk-profile-address p, .twitter .twitter-content p {
+                font-family: @font-swatch8-font-family;
+                color: @font-swatch8-color;
+                font-size: @font-swatch8-font-size;
+                font-weight: @font-swatch8-font-weight;
+                line-height: @font-swatch8-line-height;
+            } 
+            a, .bk-profile-email a {
+                font-family: @font-swatch9-font-family;
+                color: @font-swatch9-color;
+                font-size: @font-swatch9-font-size;
+                font-weight: @font-swatch9-font-weight;
+                line-height: @font-swatch9-line-height;
+            }
+            .bk-profile-address p {
+                display: inline-block;
+                padding-bottom: 0;
+                &:after {
+                    content: "\002C";
+                }
+                &:last-child:after {
+                    content: '';
+                }
+            }
+            form fieldset input {
+                border: none;
+                background-color: @color-swatch1;
+            }
         }
+    }
+
+    .widget.profile .bk-profile-socialicons a {
+        text-indent: 9999px;
+        overflow: hidden;
     }
 
     // Home page arrow down
@@ -942,8 +951,8 @@ textarea {
     background: @color-swatch7;
     display: inline-block;
     width: 100%;
-    padding: 10px 50px;
-    .footer-left, footer-right {
+    padding: 50px;
+    .footer-left, .footer-right {
         width: 50%;
         .widget.profile {
             span, .bk-profile-address p, .twitter .twitter-content p {
@@ -967,6 +976,9 @@ textarea {
                     content: '';
                 }
             }
+            .bk-profile-socialicons {
+                margin: 0;
+            }
             form {
                 fieldset input {
                     border: none;
@@ -988,7 +1000,7 @@ textarea {
     .footer-right {
         float: right;
         .widget.profile {
-            span, .bk-profile-address p, .twitter .twitter-content p {
+            span, .twitter .twitter-content p {
                 text-align: right;
             }
         }
@@ -999,11 +1011,12 @@ textarea {
 
         @media @tablet {
             .footer {
-                padding: 2% 5%;
-                .footer-left, footer-right {
+                padding: 5%;
+                .footer-left, .footer-right {
                     width: 100%;
                     float: none;
                     .widget.profile {
+                        padding-bottom: 20px;
                         span, .bk-profile-address p, .twitter .twitter-content p {
                             text-align: center;
                         }
