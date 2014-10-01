@@ -56,7 +56,7 @@ ul, li {
 
     .canvas {
         background: @color-swatch1;
-        padding-top: 5em;
+        padding-top: 130px;
         padding-bottom: 3em;
     }
 
@@ -122,15 +122,23 @@ body {
         margin: 0;
     }
 }
+
+.brand {
+    padding: 1em 0;
+}
 		
     // Profile widget styles
 
     .profile-container {
+        @media only screen and (max-width: 960px) {
+            padding-bottom: 1em;
+        }
         .widget.line {
+            padding: 1em 0 2em;
             hr.line {
                 background-color: fade(@color-swatch1,30%);
                 height: 1px;
-                width: 45%;
+                width: 40%;
             }
         }
         .widget.profile {
@@ -164,6 +172,16 @@ body {
             form fieldset input {
                 border: none;
                 background-color: @color-swatch1;
+            }
+            @media @mobile {
+                span, .bk-profile-address p, .twitter .twitter-content p {
+                    font-size: @font-swatch5-font-size;
+                    line-height: @font-swatch5-line-height;
+                } 
+                a, .bk-profile-email a {
+                    font-size: @font-swatch5-font-size;
+                    line-height: @font-swatch5-line-height;
+                }
             }
         }
     }
@@ -936,6 +954,20 @@ textarea {
                 border: 2px solid darken(@color-swatch5,20%);
             }
         }
+    }
+}
+
+
+
+
+
+// -----------------------------
+// Divider widget
+// -----------------------------
+
+hr {
+    &.line {
+        height: 1px;
     }
 }
 
