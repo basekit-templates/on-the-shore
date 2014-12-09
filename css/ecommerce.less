@@ -111,12 +111,17 @@
             background-color: darken(@color-swatch1,2%);
             border: 1px solid darken(@color-swatch1,15%);
             .border-radius(5px);
+            float: left;
+            margin-right: 5px;
         }
         .form-group.productlist-search .btn {
             height: 45px;
             vertical-align: top;
-            display: inline-block;
+            float: right;
             margin: 0;
+            @media @mobile {
+                float: left;
+            }
         }
         .productlist-item-count {
             padding: 10px;
