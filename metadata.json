@@ -1,7 +1,7 @@
 {
 	"name":"On the Shore",
 	"thumbnail":"on-the-shore.png",
-	"screenshot":"on-the-shore.png",
+	"screenshot":"on-the-shore-screenshot.jpg",
     "tags": { "en": ["clean"] },
     "pageTypes":["home"],
     "templateType":"standard",
