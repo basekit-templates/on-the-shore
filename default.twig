@@ -5,19 +5,15 @@
 
 	<nav id="nav-bar">
 		<div class="nav-container">
-			<div class="identity">
-				{{widget('companyname', 'nav-bar-companyname', {"business": "profile"})|raw}}
-			</div>
-			<div class="navigation">
-				{{widget('extendednavigation', 'header-navigation', {"align":"right"})|raw}}
-			</div>
+			{{widget('companyname', 'nav-bar-companyname', {"business":"profile"})|raw}}
+			{{widget('extendednavigation', 'header-navigation', {"align":"right"})|raw}}
 		</div>
 	</nav>
 	<div class="canvas">
-			<div class="main wrapper">
-				<a name="zone-content"></a>
-				{{zone('main')|raw}}
-			</div><!--end main-->
+		<div class="main wrapper">
+			<a name="zone-content"></a>
+			{{zone('main')|raw}}
+		</div><!--end main-->
 	</div><!--end canvas-->
 
 	<div class="footer">

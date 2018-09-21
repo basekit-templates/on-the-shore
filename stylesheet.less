@@ -262,9 +262,57 @@ body {
 }
 
 .nav-container {
-    display: table;
+    .flex-display;
+    .justify-content(space-between);
+    .align-items(center);
     width: 100%;
+
+    @media @tablet {
+        .flex-wrap(wrap);
+    }
 }
+
+.nav-container [data-widget-type="companyname"],
+.nav-container [data-widget-type="extendednavigation"] {
+
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+.nav-container [data-widget-type="extendednavigation"] {
+    .flex-grow(1);
+}
+
+.nav-container [data-widget-type="companyname"] {
+
+    @media @tablet {
+        max-width: 85%;
+    }
+}
+
+#nav-bar {
+
+    @media @tablet {
+        min-height: 45px;
+    }
+}
+
+[data-widget-type="companyname"] + [data-widget-type="extendednavigation"] a.pull {
+
+    @media @tablet {
+        top: -36px!important;
+    }
+}
+
+[data-widget-type="companyname"].bk-tpl-hidden + [data-widget-type="extendednavigation"] a.pull,
+[data-widget-type="extendednavigation"] a.pull {
+
+    @media @tablet {
+        top: -6px!important;
+    }
+}
+
 
 .navigation, .identity {
     display: table-cell;
@@ -321,7 +369,7 @@ body {
 
         @media @tablet {
             #nav-bar {
-                padding: 2% 5%;
+                padding: 10px 5%;
             }
             .navigation, .identity {
                 display: inline-block;
@@ -440,13 +488,10 @@ body {
                         }
                     }
                 }
-                a.pull {
-                    top: -33px;
-                    &:after {
-                        top:11px;
-                        background: @color-swatch1;
-                        box-shadow: 0 6px 0 @color-swatch1, 0 12px 0 @color-swatch1;
-                    }
+                a.pull:after {
+                    top:11px;
+                    background: @color-swatch1;
+                    box-shadow: 0 6px 0 @color-swatch1, 0 12px 0 @color-swatch1;
                 }
             }
         }
