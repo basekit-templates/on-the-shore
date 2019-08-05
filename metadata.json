@@ -1,5 +1,6 @@
 {
 	"name":"On the Shore",
+	"versionTenCompatible": 1,
 	"thumbnail":"on-the-shore.png",
 	"screenshot":"on-the-shore-screenshot.jpg",
     "tags": { "en": ["clean"] },
