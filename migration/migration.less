@@ -27,7 +27,32 @@
   overflow: inherit;
 }
 
+.canvas {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
 
+.bk-default .canvas {
+    padding-top: 130px;
+
+    @media @tablet {
+        padding-top: 45px;
+    }
+    @media @mobile {
+      padding-top: 45px;
+    }
+}
+
+&.edit #nav-bar {
+    width: ~"calc(100% - 200px)";
+    
+    @media @tablet {
+      width: 100%;
+    }
+    @media @mobile {
+      width: 100%;
+    }
+}
 
 
 // Migration styles
@@ -37,9 +62,9 @@
 // Replace with corresponding template values
 @container-width: 960px;
 
-@spacing__first--desktop: 40px;
-@spacing__first--tablet:  30px;
-@spacing__first--mobile:  20px;
+@spacing__first--desktop: 129px;
+@spacing__first--tablet:  59px;
+@spacing__first--mobile:  59px;
 
 @spacing--other: 30px;
 
@@ -69,17 +94,23 @@
   }
 }
 
+// Move spacing to first widget in the main zone for default pages (not sections)
+&.edit .bk-default #page-zones__main-overlay + .widget:not(.row),
+.bk-default #page-zones__main > .widget:not(.row):first-child {
+  margin-top: 20px;
+
+  @media @tablet {
+    margin-top: 15px;
+  }
+  @media @mobile {
+    margin-top: 15px;
+  }
+}
+
 
 // Move spacing to last widget in the main zone (not sections)
 #page-zones__main > .widget:not(.row):last-child {
-  margin-bottom: @spacing__first--desktop;
-
-  @media @tablet {
-    margin-bottom: @spacing__first--tablet;
-  }
-  @media @mobile {
-    margin-bottom: @spacing__first--mobile;
-  }
+  padding-bottom: ~"calc(3em - 1px)";
 }
 
 
@@ -103,6 +134,11 @@
   &:not(:last-child) {
        margin-bottom: 0;
   }
+}
+
+// Add margin to product in single product page
+#page-zones__main .ecomproduct.widget {
+    display: block;
 }
 
 
