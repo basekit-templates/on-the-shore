@@ -18,7 +18,7 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body class="{{ page.backgroundClass }}">
+<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 	{% block content %}
 	{% endblock %}
 	{% include basekit.bodyScript %}
